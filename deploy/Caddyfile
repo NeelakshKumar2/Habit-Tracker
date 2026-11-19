@@ -1,0 +1,4 @@
+{$GRIT_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy grit:8000
+}

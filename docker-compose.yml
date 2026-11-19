@@ -1,0 +1,37 @@
+# One command deployment with automatic HTTPS:  cp .env.example .env  (edit it)  then  docker compose up -d
+services:
+  grit:
+    build: .
+    restart: unless-stopped
+    environment:
+      GRIT_ENV: production
+      GRIT_DB: /data/grit.db
+      GRIT_TRUST_PROXY: "1"
+      GRIT_PUBLIC_URL: ${GRIT_PUBLIC_URL:?set GRIT_PUBLIC_URL in .env}
+      GRIT_SMTP_HOST: ${GRIT_SMTP_HOST:-}
+      GRIT_SMTP_PORT: ${GRIT_SMTP_PORT:-587}
+      GRIT_SMTP_USER: ${GRIT_SMTP_USER:-}
+      GRIT_SMTP_PASSWORD: ${GRIT_SMTP_PASSWORD:-}
+      GRIT_SMTP_FROM: ${GRIT_SMTP_FROM:-Habit Tracker <no-reply@localhost>}
+    volumes:
+      - grit-data:/data
+    expose:
+      - "8000"
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      GRIT_DOMAIN: ${GRIT_DOMAIN:?set GRIT_DOMAIN in .env}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - grit
+volumes:
+  grit-data:
+  caddy-data:
+  caddy-config:

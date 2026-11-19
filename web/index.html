@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Habit Tracker: Free Daily Streaks &amp; Challenges</title>
+<meta name="description" content="Free daily habit tracker with streaks, 21, 41, 90, 180 and 365 day challenges, a grit score and a weekly review. Private, fast and works offline.">
+<meta name="theme-color" content="#0C0D0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Habit Tracker: build streaks and finish your challenges">
+<meta property="og:description" content="Daily habit tracker with streaks, 21 to 365 day challenges, a grit score and a weekly review. Free and private.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Manrope:wght@300..700&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/landing.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Habit Tracker","alternateName":"Free Habit Tracker","applicationCategory":"LifestyleApplication","operatingSystem":"Any","description":"A free daily habit tracker with streaks, 21, 41, 90, 180 and 365 day challenges, a grit score and a weekly review.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Daily habit tracker","Streak tracker","21, 41, 90, 180 and 365 day challenges","Grit score","Weekly habit review","Private daily notes"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a habit tracker?","acceptedAnswer":{"@type":"Answer","text":"A habit tracker records whether you did a habit each day, so you can see your streak, your consistency and the days you tend to miss."}},
+{"@type":"Question","name":"How long does it take to build a habit?","acceptedAnswer":{"@type":"Answer","text":"Often longer than 21 days. A well-known study by Lally and colleagues (2009) found it took 66 days on average, with a wide range from 18 to 254 days. That is why Grit offers 21, 41, 90, 180 and 365 day challenges."}},
+{"@type":"Question","name":"What is the grit score?","acceptedAnswer":{"@type":"Answer","text":"The grit score runs from 0 to 1000. It rewards days kept, finished challenges, your longest streak and daily notes, scaled by how consistent and recent your effort is."}},
+{"@type":"Question","name":"Is this habit tracker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Habit Tracker is free to use."}},
+{"@type":"Question","name":"Is my data private?","acceptedAnswer":{"@type":"Answer","text":"Your challenges and notes belong to your account and are visible only to you. Passwords are hashed, you can export your data at any time, and you can permanently delete your account and everything in it from the Account page."}},
+{"@type":"Question","name":"What happens if I miss a day?","acceptedAnswer":{"@type":"Answer","text":"The missed day shows on your calendar, your consistency drops a little and your streak resets. You can still tick the day later and carry on."}}
+]}
+</script>
+</head>
+<body>
+<div class="lp">
+  <header class="lp-nav">
+    <a class="mark" href="./" aria-label="Habit Tracker, home"><i></i>Habit Tracker</a>
+    <nav class="lp-actions" aria-label="Account"><a class="btn ghost" href="auth.html#login">Sign in</a><a class="btn primary" href="auth.html#register">Create account</a></nav>
+  </header>
+
+  <p class="notice" id="deleted-note" role="status" hidden>Your account and all its data were permanently deleted.</p>
+  <main style="display:grid;gap:88px">
+    <section class="hero">
+      <p class="eyebrow">Free habit tracker</p>
+      <h1>The habit tracker for people who <em>finish</em>.</h1>
+      <p class="lead">Track your daily habits with streaks, commit to a 21, 41, 90, 180 or 365 day challenge, and watch your grit score climb until your confident self shows up.</p>
+      <div class="cta"><a class="btn primary" href="auth.html#register">Start your first challenge</a><a class="btn" href="#how">See how it works</a></div>
+      <p class="hero-meta"><span>Free</span><span>Private to you</span><span>Export anytime</span><span>Delete anytime</span></p>
+    </section>
+
+    <section aria-labelledby="f">
+      <h2 id="f">A daily habit tracker built around proof</h2>
+      <div class="features">
+        <article class="feat"><h3>Daily habit tracker</h3><p>Tick each day on a real calendar. Start on a Monday and a 7 day challenge ends on a Sunday. Every day gets a 30 word note.</p></article>
+        <article class="feat"><h3>Streak tracker</h3><p>See your current and longest streak, a 20 week activity grid and the weekdays you keep best.</p></article>
+        <article class="feat"><h3>21, 41, 90, 180, 365 day challenges</h3><p>Pick the length that fits the habit. Finish a challenge and it is stamped in your personal diary.</p></article>
+        <article class="feat"><h3>Grit score</h3><p>A score from 0 to 1000 that rewards consistency, streaks and reflection. Cross 400 and Confident Self unlocks, backed by your own record.</p></article>
+        <article class="feat"><h3>Weekly habit review</h3><p>Get a short, specific review of your streak, consistency and weakest day, with one clear next step.</p></article>
+        <article class="feat"><h3>Wisdom library</h3><p>Ideas from well-known self-help books and from the Yoga Sutras, Gita and Upanishads, restated in plain words.</p></article>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="h">
+      <h2 id="h">How the habit tracker works</h2>
+      <ol class="steps">
+        <li><b>Frame your one habit</b><span>Write the destination you are aiming at and the one habit that gets you there, with a time and place.</span></li>
+        <li><b>Start a challenge</b><span>Choose 21, 41, 90, 180 or 365 days. Day one is the date you pick, and the calendar shows every day.</span></li>
+        <li><b>Tick the day, write a note</b><span>One tap to keep the chain. Thirty words to remember what worked.</span></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="g">
+      <h2 id="g">A grit score that means something</h2>
+      <p class="lead">Six tiers, from Spark to Unshakeable. Confident Self starts at 400, roughly where a finished 90 day challenge with daily notes lands. Missing days lowers your consistency, and a week away trims your recency.</p>
+      <div class="tiers" role="list">
+        <div role="listitem"><b>Spark</b><span>0</span></div><div role="listitem"><b>Builder</b><span>100</span></div><div role="listitem"><b>Steady</b><span>250</span></div>
+        <div class="hi" role="listitem"><b>Confident Self</b><span>400</span></div><div role="listitem"><b>Relentless</b><span>650</span></div><div role="listitem"><b>Unshakeable</b><span>850</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="q">
+      <h2 id="q">Habit tracker questions</h2>
+      <div class="faq">
+        <details><summary>What is a habit tracker?</summary><p>A habit tracker records whether you did a habit each day, so you can see your streak, your consistency and the days you tend to miss.</p></details>
+        <details><summary>How long does it take to build a habit?</summary><p>Often longer than 21 days. A well-known study by Lally and colleagues (2009) found it took 66 days on average, with a wide range from 18 to 254 days. That is why Grit offers 21, 41, 90, 180 and 365 day challenges.</p></details>
+        <details><summary>What is the grit score?</summary><p>The grit score runs from 0 to 1000. It rewards days kept, finished challenges, your longest streak and daily notes, scaled by how consistent and recent your effort is.</p></details>
+        <details><summary>Is this habit tracker free?</summary><p>Yes. Habit Tracker is free to use.</p></details>
+        <details><summary>Is my data private?</summary><p>Your challenges and notes belong to your account and are visible only to you. Passwords are hashed, you can export your data at any time, and you can permanently delete your account and everything in it from the Account page.</p></details>
+        <details><summary>What happens if I miss a day?</summary><p>The missed day shows on your calendar, your consistency drops a little and your streak resets. You can still tick the day later and carry on.</p></details>
+      </div>
+    </section>
+
+    <section class="closer" aria-labelledby="c">
+      <h2 id="c">Your most powerful self is waiting at the most beautiful destination.</h2>
+      <p class="lead">Start with one habit and one day.</p>
+      <div class="cta"><a class="btn primary" href="auth.html#register">Create your free account</a></div>
+    </section>
+  </main>
+
+  <footer class="lp-foot"><span>Habit Tracker: free daily streaks and challenges.</span><a href="auth.html#login">Sign in</a></footer>
+</div>
+<script src="js/landing.js"></script>
+</body>
+</html>

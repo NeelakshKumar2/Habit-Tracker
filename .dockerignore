@@ -1,0 +1,9 @@
+.git
+tests
+docs
+__pycache__
+*.pyc
+.env
+*.db
+*.db-wal
+*.db-shm

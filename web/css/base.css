@@ -1,0 +1,102 @@
+
+/* Layout concept: a private members' room. Graphite surfaces, hairline borders, one platinum accent and a single crimson thread for the score. Pages are lists of modules on a 12-column grid. */
+:root{
+  --bg:#0C0D0F;--surface:#141619;--raise:#1A1D21;--line:#25292E;--line2:#343A41;
+  --ink:#ECEEF0;--muted:#8E959C;--faint:#5C636A;
+  --accent:#D5D9DE;--on-accent:#0C0D0F;--signal:#C2434C;
+  --shadow:0 24px 48px rgba(0,0,0,.4);
+  --paper:#15181B;--rule:#22262A;--margin:#7A2F35;--hole:#2C3136;--hand-ink:#C9D3DF;
+  --s1:#D7DBE0;--s2:#B9BFC6;--s3:#9AA1A9;--s-ink:#0F1113;
+  --print:#E9EBEE;--print-ink:#23272C;--tape:rgba(200,205,212,.38);
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Caveat","Bradley Hand","Segoe Print","Comic Sans MS",cursive;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#E8EAEC;--surface:#F5F6F7;--raise:#FFFFFF;--line:#D3D7DB;--line2:#BFC5CB;
+    --ink:#16181B;--muted:#5E656C;--faint:#8A9097;
+    --accent:#1B1E22;--on-accent:#F4F5F6;--signal:#9B2C35;
+    --shadow:0 20px 40px rgba(20,24,28,.12);
+    --paper:#FAFAFB;--rule:#E0E3E6;--margin:#C98C92;--hole:#D3D7DB;--hand-ink:#2B3A4E;
+    --s1:#CDD1D6;--s2:#B6BCC3;--s3:#9FA6AE;--s-ink:#14161A;
+    --tape:rgba(120,126,135,.3);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#E8EAEC;--surface:#F5F6F7;--raise:#FFFFFF;--line:#D3D7DB;--line2:#BFC5CB;
+  --ink:#16181B;--muted:#5E656C;--faint:#8A9097;
+  --accent:#1B1E22;--on-accent:#F4F5F6;--signal:#9B2C35;
+  --shadow:0 20px 40px rgba(20,24,28,.12);
+  --paper:#FAFAFB;--rule:#E0E3E6;--margin:#C98C92;--hole:#D3D7DB;--hand-ink:#2B3A4E;
+  --s1:#CDD1D6;--s2:#B6BCC3;--s3:#9FA6AE;--s-ink:#14161A;
+  --tape:rgba(120,126,135,.3);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-block:18px 56px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* shell */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+.mark{font:600 .9rem var(--body);letter-spacing:.46em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.mark i{width:6px;height:6px;background:var(--signal);display:block}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.tabs a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;text-decoration:none;color:var(--muted);font-weight:500;font-size:.88rem;letter-spacing:.02em;border-bottom:1px solid transparent}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current]{color:var(--ink);border-bottom-color:var(--ink)}
+.tabs svg,.dock svg{width:18px;height:18px;flex:none}
+.tabs svg{display:none}
+.nav-av{width:22px;height:22px;border-radius:50%;object-fit:cover;display:block;flex:none}
+.dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--surface);border-top:1px solid var(--line);
+  padding:8px max(6px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));
+  grid-template-columns:repeat(var(--n,6),minmax(0,1fr))}
+.dock a{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--faint);font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 0;min-width:0}
+.dock a span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock a[aria-current]{color:var(--ink)}
+.dock .nav-av{width:20px;height:20px}
+@media (max-width:759px){
+  .tabs{display:none}
+  .dock{display:grid}
+  body{padding-bottom:100px}
+  .bar{margin-bottom:22px;padding-bottom:16px}
+}
+
+/* page header and module grid */
+.phead{display:grid;gap:10px;padding:6px 0 30px}
+.eyebrow,.kick{font:600 .68rem var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.phead h1{font:400 clamp(2.2rem,5.6vw,3.6rem)/1.05 var(--display);letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:58ch}
+.mods{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.mod{grid-column:span 12;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.mod.bare{background:none;border:0;padding:0}
+.mh{display:grid;gap:6px}
+.mh h2{font:400 1.55rem/1.15 var(--display)}
+@media (min-width:900px){
+  .span-4{grid-column:span 4}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}.span-8{grid-column:span 8}
+}
+.muted{color:var(--muted)}
+.meta{color:var(--muted);font-size:.85rem}
+.more{color:var(--muted);font-size:.85rem;text-decoration:none;border-bottom:1px solid var(--line2);align-self:flex-start;padding-bottom:1px}
+.more:hover{color:var(--ink);border-color:var(--ink)}
+.foot{margin-top:48px;color:var(--faint);font-size:.78rem;letter-spacing:.02em}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);max-width:calc(100% - 32px);
+  background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:4px;font-size:.9rem;font-weight:500;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:30;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (min-width:760px){.toast{bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

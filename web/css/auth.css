@@ -1,0 +1,23 @@
+/* Sign in and create account. Uses the same graphite palette as the app. */
+.auth-wrap{max-width:440px;margin:0 auto;padding-top:min(10vh,72px);display:grid;gap:28px;justify-items:center}
+.auth-card{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:28px 26px 26px;display:grid;gap:18px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.auth-tabs button{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:12px 8px;cursor:pointer;min-height:44px}
+.auth-tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--signal)}
+.auth-card h1{font:400 clamp(1.9rem,6vw,2.4rem)/1.1 var(--display)}
+.auth-card .sub{margin-top:-8px}
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:78px}
+.pw-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:.78rem;font-weight:600;letter-spacing:.06em;cursor:pointer;min-height:36px;padding:0 10px}
+.pw-toggle:hover{color:var(--ink)}
+.hint{color:var(--muted);font-size:.82rem;margin:-8px 0 0}
+.err{color:var(--signal);font-size:.88rem;min-height:1.3em;margin:0}
+.btn.wide{width:100%}
+.btn[disabled]{opacity:.55;cursor:progress}
+.switch{color:var(--muted);font-size:.88rem;text-align:center}
+.switch button{background:none;border:0;color:var(--ink);text-decoration:underline;cursor:pointer;padding:0;font-weight:600}
+.fine{color:var(--faint);font-size:.78rem;text-align:center;max-width:36ch}
+[hidden]{display:none!important}
+.ok{color:var(--ink);font-size:.9rem;margin:0;min-height:0}
+.ok:empty{display:none}
+.auth-tabs[hidden]{display:none}
